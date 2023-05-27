@@ -4,6 +4,7 @@ import Link from "next/link";
 import classNames from "classnames";
 import styles from "./NavItem.module.css";
 import { useSelectedLayoutSegment } from "next/navigation";
+import { Typography } from "../Typography/Typography";
 
 interface NavItemProps {
   href: string;
@@ -23,7 +24,7 @@ export const NavItem = ({ href, label, targetSegment }: NavItemProps) => {
         })}
         href={href}
       >
-        {label}
+        <Typography noMargin>{label}</Typography>
       </Link>
     </li>
   );

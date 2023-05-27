@@ -4,33 +4,19 @@
 }
 
 .title {
-  margin-top: 0;
-  margin-bottom: 0.25rem;
   font-weight: bold;
   font-size: large;
 }
 
-.subtitle {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
 .date {
-  margin: 0;
   font-size: smaller;
   font-style: italic;
   color: gray;
 }
 
 .location {
-  margin-top: 0;
   font-size: smaller;
-  padding-bottom: 1rem;
   color: gray;
-}
-
-.body {
-  margin: 0;
 }
 
 .logoContainer {

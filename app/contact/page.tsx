@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Typography } from "@/components/Typography/Typography";
 
 const SocialTable = () => {
   const socials = [
@@ -32,7 +32,7 @@ const SocialTable = () => {
                 }}
                 href={href}
               >
-                {text}
+                <Typography noMargin>{text}</Typography>
               </a>
             </td>
           </tr>
@@ -45,10 +45,10 @@ const SocialTable = () => {
 export default function Contact() {
   return (
     <>
-      <h1>Contact</h1>
-      <p>
+      <Typography tag="h1">Contact</Typography>
+      <Typography>
         I&apos;m always looking to connect with folks about growth engineering.
-      </p>
+      </Typography>
       <SocialTable />
     </>
   );

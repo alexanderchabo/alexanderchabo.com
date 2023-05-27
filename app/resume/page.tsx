@@ -5,6 +5,7 @@ import {
 } from "@/lib/contentful/api";
 import { draftMode } from "next/headers";
 import { Document } from "@contentful/rich-text-types";
+import { Typography } from "@/components/Typography/Typography";
 
 interface Sys {
   contentType: {
@@ -93,14 +94,15 @@ export default async function Resume() {
 
   return (
     <>
-      <h1>Resume</h1>
-      <p>The story so far</p>
-      <h2>Experience</h2>
-      <p>Wearer of many hats</p>
+      <Typography tag="h1">Resume</Typography>
+      <Typography>The story so far</Typography>
+
+      <Typography tag="h2">Experience</Typography>
+      <Typography>Wearer of many hats</Typography>
       <ResumeEntries entries={workEntries} />
-      <h2>Education</h2>
-      <p>The math is strong in this one</p>
-      <br />
+
+      <Typography tag="h2">Education</Typography>
+      <Typography>The math is strong in this one</Typography>
       <ResumeEntries entries={educationEntries} />
     </>
   );

@@ -1,0 +1,16 @@
+.p {
+  margin-top: 0;
+  margin-bottom: var(--font-margin-bottom);
+
+  &.noMargin {
+    margin: 0;
+  }
+}
+
+.h1 {
+  margin-bottom: var(--font-margin-bottom);
+
+  &.noMargin {
+    margin: 0;
+  }
+}

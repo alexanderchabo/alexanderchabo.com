@@ -2,6 +2,7 @@ import styles from "./ResumeEntry.module.css";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, Document } from "@contentful/rich-text-types";
 import Image from "next/image";
+import { Typography } from "@/components/Typography/Typography";
 
 export interface ResumeEntryProps {
   title: string;
@@ -37,14 +38,20 @@ export const ResumeEntry = ({
         <Image src={logo.src} alt={logo.alt} fill className={styles.logo} />
       </div> */}
       <div>
-        <p className={styles.title}>{title}</p>
-        <p className={styles.subtitle}>{subtitle}</p>
-        <p className={styles.date}>{date}</p>
-        <p className={styles.location}>{location}</p>
+        <Typography noMargin className={styles.title}>
+          {title}
+        </Typography>
+        <Typography>{subtitle}</Typography>
+
+        <Typography noMargin className={styles.date}>
+          {date}
+        </Typography>
+        <Typography className={styles.location}>{location}</Typography>
+
         {documentToReactComponents(body, {
           renderNode: {
             [BLOCKS.PARAGRAPH]: (_node, children) => (
-              <p className={styles.body}>{children}</p>
+              <Typography noMargin>{children}</Typography>
             ),
           },
         })}
