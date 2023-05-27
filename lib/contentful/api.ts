@@ -1,3 +1,5 @@
+import resolveResponse from "contentful-resolve-response";
+
 if (!process.env.CONTENTFUL_SPACE_ID) {
   throw new Error("CONTENTFUL_SPACE_ID missing");
 }
@@ -34,23 +36,27 @@ const fetchEntries = async (
 };
 
 export const getAllEducationEntries = async <TEntries>(preview = false) => {
-  const entries = await fetchEntries(
+  const response = await fetchEntries(
     {
       content_type: "education",
     },
     preview
   );
 
-  return entries.items as TEntries;
+  const entries = resolveResponse(response);
+
+  return entries as TEntries;
 };
 
 export const getAllWorkEntries = async <TEntries>(preview = false) => {
-  const entries = await fetchEntries(
+  const response = await fetchEntries(
     {
       content_type: "work",
     },
     preview
   );
 
-  return entries.items as TEntries;
+  const entries = resolveResponse(response);
+
+  return entries as TEntries;
 };

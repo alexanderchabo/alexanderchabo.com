@@ -11,7 +11,7 @@
 }
 
 .subtitle {
-  margin: 0;
+  margin-top: 0;
   margin-bottom: 1rem;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .location {
-  margin: 0;
+  margin-top: 0;
   font-size: smaller;
   padding-bottom: 1rem;
   color: gray;
@@ -31,4 +31,17 @@
 
 .body {
   margin: 0;
+}
+
+.logoContainer {
+  height: 30px;
+  max-width: 100px;
+  position: relative;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  object-fit: contain;
+  object-position: left;
 }

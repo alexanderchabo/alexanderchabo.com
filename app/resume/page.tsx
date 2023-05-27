@@ -6,6 +6,27 @@ import {
 import { draftMode } from "next/headers";
 import { Document } from "@contentful/rich-text-types";
 
+interface Sys {
+  contentType: {
+    sys: {
+      id: string;
+    };
+  };
+}
+
+interface Logo {
+  fields: {
+    title: string;
+    description: string;
+    file: {
+      url: string;
+      details: object;
+      fileName: string;
+      contentType: string;
+    };
+  };
+}
+
 interface Education {
   fields: {
     studyType: string;
@@ -14,17 +35,11 @@ interface Education {
     location: string;
     summary: Document;
     link: string;
-    logo: object;
+    logo: Logo;
     dateStarted: string;
     dateEnded: string;
   };
-  sys: {
-    contentType: {
-      sys: {
-        id: string;
-      };
-    };
-  };
+  sys: Sys;
 }
 
 interface Work {
@@ -34,17 +49,11 @@ interface Work {
     location: string;
     summary: Document;
     link: string;
-    logo: object;
+    logo: Logo;
     dateStarted: string;
     dateEnded: string;
   };
-  sys: {
-    contentType: {
-      sys: {
-        id: string;
-      };
-    };
-  };
+  sys: Sys;
 }
 
 export default async function Resume() {
@@ -60,6 +69,10 @@ export default async function Resume() {
       dateEnded: entry.fields.dateEnded,
       location: entry.fields.location,
       body: entry.fields.summary,
+      logo: {
+        src: entry.fields.logo.fields.file.url,
+        alt: entry.fields.logo.fields.title,
+      },
     };
   });
 
@@ -71,6 +84,10 @@ export default async function Resume() {
       dateEnded: entry.fields.dateEnded,
       location: entry.fields.location,
       body: entry.fields.summary,
+      logo: {
+        src: entry.fields.logo.fields.file.url,
+        alt: entry.fields.logo.fields.title,
+      },
     };
   });
 
