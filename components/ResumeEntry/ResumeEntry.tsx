@@ -20,10 +20,22 @@ export const ResumeEntry = ({
   location,
   body,
 }: ResumeEntryProps) => {
-  // TODO: Fix this hack to get the sorting to work properly
-  const endDate = dateEnded > new Date().toISOString() ? "present" : dateEnded;
+  const dateStartedString = new Date(dateStarted).toLocaleDateString("en-US", {
+    month: "short",
+    year: "numeric",
+  });
 
-  const date = `${dateStarted} to ${endDate}`;
+  let dateEndedString = new Date(dateEnded).toLocaleDateString("en-US", {
+    month: "short",
+    year: "numeric",
+  });
+
+  // If the date ended is in the future, it means that the job is ongoing
+  if (dateEnded > new Date().toISOString()) {
+    dateEndedString = "present";
+  }
+
+  const date = `${dateStartedString} to ${dateEndedString}`;
 
   return (
     <div className={styles.entry}>
