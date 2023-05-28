@@ -15,7 +15,7 @@ export const ResumeEntries = ({ entries }: ResumeEntriesProps) => {
       }}
     >
       {entries.map(
-        ({ title, subtitle, dateStarted, dateEnded, location, body, logo }) => {
+        ({ title, subtitle, dateStarted, dateEnded, location, body }) => {
           return (
             <li
               key={title}
@@ -31,7 +31,6 @@ export const ResumeEntries = ({ entries }: ResumeEntriesProps) => {
                 dateEnded={dateEnded}
                 location={location}
                 body={body}
-                logo={logo}
               />
             </li>
           );

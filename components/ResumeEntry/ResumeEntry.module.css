@@ -18,16 +18,3 @@
   font-size: smaller;
   color: gray;
 }
-
-.logoContainer {
-  height: 30px;
-  max-width: 100px;
-  position: relative;
-  text-align: left;
-  margin-bottom: 1rem;
-}
-
-.logo {
-  object-fit: contain;
-  object-position: left;
-}

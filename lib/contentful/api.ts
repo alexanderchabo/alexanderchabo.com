@@ -1,4 +1,4 @@
-import resolveResponse from "contentful-resolve-response";
+import { Document } from "@contentful/rich-text-types";
 
 if (!process.env.CONTENTFUL_SPACE_ID) {
   throw new Error("CONTENTFUL_SPACE_ID missing");
@@ -12,51 +12,116 @@ if (!process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN) {
   throw new Error("CONTENTFUL_PREVIEW_ACCESS_TOKEN missing");
 }
 
-const fetchEntries = async (
-  query: Record<string, string> = {},
-  preview = false
-) => {
+type Education = {
+  sys: { id: string };
+  studyType: string;
+  area: string;
+  institution: string;
+  location: string;
+  summary: {
+    json: Document;
+  };
+  dateStarted: string;
+  dateEnded: string;
+};
+
+type EducationCollection = {
+  data: {
+    educationCollection: {
+      items: Education[];
+    };
+  };
+};
+
+const getEducationQuery = (preview: boolean) => `{
+  educationCollection (preview: ${preview}) {
+    items {
+      studyType
+      area
+      institution
+      location
+      summary {
+        json
+      }
+      dateStarted
+      dateEnded
+    }
+  }
+}`;
+
+type Work = {
+  sys: { id: string };
+  position: string;
+  company: string;
+  location: string;
+  summary: {
+    json: Document;
+  };
+  dateStarted: string;
+  dateEnded: string;
+};
+
+type WorkCollection = {
+  data: {
+    workCollection: {
+      items: Work[];
+    };
+  };
+};
+
+const getWorksQuery = (preview: boolean) => `{
+  workCollection (preview: ${preview}) {
+    items {
+      position
+      company
+      location
+      summary {
+        json
+      }
+      dateStarted
+      dateEnded
+    }
+  }
+}`;
+
+const fetchEntries = async <T>(query: string, preview = false) => {
   const accessToken = preview
     ? process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
     : process.env.CONTENTFUL_ACCESS_TOKEN;
-  const baseUrl = `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/master/entries?access_token=${accessToken}`;
-  const url = new URL(baseUrl);
 
-  Object.entries(query).forEach(([key, value]) => {
-    url.searchParams.append(key, value);
-  });
-
-  const response = await fetch(url);
+  const response = await fetch(
+    `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ query }),
+    }
+  );
 
   if (!response.ok) {
     throw new Error("Failed to fetch contentful entries");
   }
 
-  return response.json();
+  return response.json() as T;
 };
 
-export const getAllEducationEntries = async <TEntries>(preview = false) => {
-  const response = await fetchEntries(
-    {
-      content_type: "education",
-    },
+export const getAllEducationEntries = async (preview = false) => {
+  const { data } = await fetchEntries<EducationCollection>(
+    getEducationQuery(preview),
     preview
   );
 
-  const entries = resolveResponse(response);
-
-  return entries as TEntries;
+  return data.educationCollection.items;
 };
 
-export const getAllWorkEntries = async <TEntries>(preview = false) => {
-  const response = await fetchEntries(
-    {
-      content_type: "work",
-    },
+export const getAllWorkEntries = async (preview = false) => {
+  const { data } = await fetchEntries<WorkCollection>(
+    getWorksQuery(preview),
     preview
   );
 
-  const entries = resolveResponse(response);
-
-  return entries as TEntries;
+  return data.workCollection.items;
 };

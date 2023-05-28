@@ -1,44 +1,43 @@
 import { Typography } from "@/components/Typography/Typography";
 
-const SocialTable = () => {
-  const socials = [
-    {
-      name: "Email",
-      href: "mailto:alexander.chabo@gmail.com",
-      text: "alexander.chabo@gmail.com",
-    },
-    {
-      name: "GitHub",
-      href: "https://github.com/alexanderchabo/",
-      text: "https://github.com/alexanderchabo/",
-    },
-    {
-      name: "LinkedIn",
-      href: "https://www.linkedin.com/in/alexanderchabo/",
-      text: "https://www.linkedin.com/in/alexanderchabo/",
-    },
-  ];
+const SOCIALS = [
+  {
+    name: "Email",
+    href: "mailto:alexander.chabo@gmail.com",
+    text: "alexander.chabo@gmail.com",
+  },
+  {
+    name: "GitHub",
+    href: "https://github.com/alexanderchabo/",
+    text: "https://github.com/alexanderchabo/",
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/alexanderchabo/",
+    text: "https://www.linkedin.com/in/alexanderchabo/",
+  },
+];
 
+const Socials = () => {
   return (
-    <table>
-      <tbody>
-        {socials.map(({ name, href, text }) => (
-          <tr key={name}>
-            <td>{name}</td>
-            <td>
-              <a
-                style={{
-                  color: "blue",
-                }}
-                href={href}
-              >
-                <Typography noMargin>{text}</Typography>
-              </a>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <div>
+      {SOCIALS.map(({ name, href, text }) => (
+        <div key={name} style={{ marginBottom: "1rem" }}>
+          <Typography noMargin>{name}</Typography>
+
+          <a
+            style={{
+              color: "blue",
+              wordWrap: "break-word",
+            }}
+            href={href}
+            target="_blank"
+          >
+            {text}
+          </a>
+        </div>
+      ))}
+    </div>
   );
 };
 
@@ -49,7 +48,7 @@ export default function Contact() {
       <Typography>
         I&apos;m always looking to connect with folks about growth engineering.
       </Typography>
-      <SocialTable />
+      <Socials />
     </>
   );
 }
