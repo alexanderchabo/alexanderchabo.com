@@ -46,7 +46,8 @@ export default function Contact() {
     <>
       <Typography tag="h1">Contact</Typography>
       <Typography>
-        I&apos;m always looking to connect with folks about growth engineering.
+        Don&apos;t be a stranger! Feel free to reach out to me on any of the
+        socials below.
       </Typography>
       <Socials />
     </>

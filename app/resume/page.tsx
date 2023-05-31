@@ -34,14 +34,11 @@ export default async function Resume() {
   return (
     <>
       <Typography tag="h1">Resume</Typography>
-      <Typography>The story so far</Typography>
-
-      <Typography tag="h2">Experience</Typography>
-      <Typography>Wearer of many hats</Typography>
+      <Typography>The MacGyver is strong in this one.</Typography>
       <ResumeEntries entries={mappedWorkEntries} />
 
       <Typography tag="h2">Education</Typography>
-      <Typography>The math is strong in this one</Typography>
+      <Typography>The math is (was?) strong in this one.</Typography>
       <ResumeEntries entries={mappedEducationEntries} />
     </>
   );

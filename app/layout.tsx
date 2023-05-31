@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Alexander Chabo - Senior Fullstack Growth Engineer",
   description:
-    "Experienced Senior Fullstack Growth Engineer specializing in driving scalable business growth through innovative solutions. Skilled in frontend and backend development, data analysis, and A/B testing.",
+    "Experienced Senior Fullstack Growth Engineer specializing in driving scalable business growth through Product-Led Growth. Skilled in frontend and backend development, data analysis, and experimentation.",
 };
 
 export default function RootLayout({
