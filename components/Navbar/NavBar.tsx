@@ -14,7 +14,7 @@ export const NavBar = () => {
     <header>
       <nav className={styles.nav}>
         <Link className={styles.logo} href="/">
-          AC
+          Ac
         </Link>
         <ul>
           {NAV_LINKS.map(({ href, label, targetSegment }) => (
