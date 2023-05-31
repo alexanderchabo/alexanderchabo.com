@@ -1,5 +1,12 @@
 import { Typography } from "@/components/Typography/Typography";
 
+export const metadata = {
+  title:
+    "Alexander Chabo - Personal Website | Senior Fullstack Growth Engineer",
+  description:
+    "Alexander Chabo is a highly experienced Senior FullStack Growth Engineer with over 9 years of expertise. Passionate about combining groundbreaking technology with culture, people, and innovative ideas, Alexander has made significant contributions in the field of growth engineering. He excels in building and scaling products and teams by leveraging product-led experimentation. Alexander's thought leadership, coaching, and hands-on work have also played a pivotal role in shaping how organizations approach progressive delivery and product analytics.",
+};
+
 export default function Home() {
   const yearsWorking = new Date().getFullYear() - 2014;
 
@@ -8,7 +15,7 @@ export default function Home() {
       <Typography tag="h1">Hey there! I&apos;m Alexander Chabo</Typography>
 
       <Typography>
-        {`I'm a Swedish Software Engineer with +${yearsWorking} years of experience,
+        {`I'm a Senior FullStack Growth Engineer with +${yearsWorking} years of experience,
         aiming to be where groundbreaking tech meets culture, people, and the
         next big ideas.`}
       </Typography>

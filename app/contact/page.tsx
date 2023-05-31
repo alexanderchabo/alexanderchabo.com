@@ -41,6 +41,12 @@ const Socials = () => {
   );
 };
 
+export const metadata = {
+  title: "Alexander Chabo - Contact | Senior Fullstack Growth Engineer",
+  description:
+    "Get in touch with Alexander Chabo through the Contact page. Don't hesitate to connect via email at alexander.chabo@gmail.com or find him on GitHub (https://github.com/alexanderchabo/) and LinkedIn (https://www.linkedin.com/in/alexanderchabo/). Reach out and start a conversation today!",
+};
+
 export default function Contact() {
   return (
     <>
