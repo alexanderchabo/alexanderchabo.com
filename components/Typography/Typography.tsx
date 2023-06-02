@@ -22,7 +22,7 @@ export const Typography = ({
     <Component
       className={classNames(
         {
-          [styles[`${tag}`]]: tag,
+          [styles[tag]]: tag,
           [styles.noMargin]: noMargin,
         },
         className
