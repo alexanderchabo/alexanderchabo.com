@@ -14,5 +14,5 @@ const analytics = AnalyticsBrowser.load(
 );
 
 export const trackPage = (url: string) => {
-  analytics.page(url);
+  analytics.page();
 };
