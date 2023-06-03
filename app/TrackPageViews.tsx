@@ -9,8 +9,8 @@ export function TrackPageViews() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    const url = pathname + searchParams.toString();
-    trackPage(url);
+    // TODO: switch logic here
+    trackPage();
   }, [pathname, searchParams]);
 
   return null;
