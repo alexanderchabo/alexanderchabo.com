@@ -2,8 +2,9 @@ import { NavBar } from "@/components/Navbar/NavBar";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import styles from "./layout.module.css";
-import { Suspense } from "react";
 import { TrackPageViews } from "./TrackPageViews";
+import Script from "next/script";
+import { renderSnippet } from "@/lib/segment/snippet";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,9 +18,13 @@ export default function RootLayout({
       <body className={inter.className}>
         <NavBar />
         <main className={styles.main}>{children}</main>
-        <Suspense fallback={null}>
-          <TrackPageViews />
-        </Suspense>
+        <Script
+          id="segment-script"
+          dangerouslySetInnerHTML={{
+            __html: renderSnippet(),
+          }}
+        />
+        <TrackPageViews />
       </body>
     </html>
   );
