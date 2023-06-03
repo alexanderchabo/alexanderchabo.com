@@ -6,7 +6,7 @@ import { trackPage } from "@/lib/segment/utils";
 import { useEffect, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
-export const Analytics = () => {
+export default function Analytics() {
   const [ready, setReady] = useState(false);
 
   const pathname = usePathname();
@@ -27,4 +27,4 @@ export const Analytics = () => {
       onReady={() => setReady(true)}
     />
   );
-};
+}
