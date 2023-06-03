@@ -23,6 +23,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: renderSnippet(),
           }}
+          strategy="lazyOnload"
         />
         <TrackPageViews />
       </body>
