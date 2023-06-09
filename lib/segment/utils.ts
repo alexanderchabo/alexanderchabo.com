@@ -1,3 +1,3 @@
 export const trackPage = (_url: string) => {
-  window.analytics?.page?.();
+  window.analytics.page();
 };
