@@ -1,7 +1,5 @@
 "use client";
 
-import Script from "next/script";
-import { renderSnippet } from "@/lib/segment/snippet";
 import { trackPage } from "@/lib/segment/utils";
 import { useEffect } from "react";
 
@@ -16,13 +14,5 @@ export const Analytics = () => {
     trackPage(url);
   }, [pathname, searchParams]);
 
-  return (
-    <Script
-      id="segment-script"
-      dangerouslySetInnerHTML={{
-        __html: renderSnippet(),
-      }}
-      strategy="afterInteractive"
-    />
-  );
+  return null;
 };

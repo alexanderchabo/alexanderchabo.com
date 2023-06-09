@@ -1,6 +1,6 @@
 import snippet from "@segment/snippet";
 
-export const renderSnippet = () => {
+export const segmentSnippet = () => {
   const options = {
     apiKey: process.env.NEXT_PUBLIC_SEGMENT_WRITE_KEY,
     page: false,
