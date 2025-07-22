@@ -4,6 +4,7 @@ import styles from "./layout.module.css";
 
 import { Analytics } from "@/lib/segment/Analytics";
 import { NavBar } from "@/components/Navbar/NavBar";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +18,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <NavBar />
         <main className={styles.main}>{children}</main>
-        <Analytics />
+        <Suspense fallback={null}>
+          <Analytics />
+        </Suspense>
       </body>
     </html>
   );
