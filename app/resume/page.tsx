@@ -14,7 +14,7 @@ export const metadata = {
 };
 
 export default async function Resume() {
-  const { isEnabled } = draftMode();
+  const { isEnabled } = await draftMode();
 
   const educationEntries = await getAllEducationEntries(isEnabled);
   const workEntries = await getAllWorkEntries(isEnabled);
