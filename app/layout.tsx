@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} bg-[#f6f7f8] text-[#0f172a] antialiased`}
+        className={`${inter.className} bg-[var(--bg)] text-[#0f172a] antialiased`}
       >
         <a href="#main" className="skip-link">
           Skip to content
@@ -24,7 +24,7 @@ export default function RootLayout({
           <NavBar />
           <main
             id="main"
-            className="flex flex-col pt-6 md:pt-10 leading-relaxed text-[15px] md:text-[16px] text-[#111827]"
+            className="flex flex-col pt-6 md:pt-10 leading-relaxed text-[15px] md:text-[16px] text-[var(--fg)]"
           >
             {children}
           </main>

@@ -37,13 +37,13 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-3">
             <a
               href="/resume"
-              className="inline-flex items-center justify-center rounded-md bg-black text-white px-4 py-2 text-sm font-medium hover:bg-zinc-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+              className="inline-flex items-center justify-center rounded-md bg-black text-white px-4 py-2 text-sm font-medium hover:bg-emerald-900/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
             >
               View resume
             </a>
             <a
               href="/contact"
-              className="inline-flex items-center justify-center rounded-md bg-white text-black border border-zinc-300 px-4 py-2 text-sm font-medium hover:bg-zinc-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+              className="inline-flex items-center justify-center rounded-md bg-white text-black border border-[var(--border)] px-4 py-2 text-sm font-medium hover:bg-emerald-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
             >
               Get in touch
             </a>

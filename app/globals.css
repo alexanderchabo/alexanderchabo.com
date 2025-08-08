@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+:root {
+  --bg: #f6f7f8; /* original neutral background */
+  --fg: #0f1a14; /* deep greenish text */
+  --border: #000000; /* light mint border */
+  --accent: #000000; /* emerald/pastel */
+}
+
 /* Accessible skip link */
 .skip-link {
   position: absolute;
