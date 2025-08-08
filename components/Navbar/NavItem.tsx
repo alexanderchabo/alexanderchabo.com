@@ -21,7 +21,7 @@ export const NavItem = ({ href, label, targetSegment }: NavItemProps) => {
         className={
           isActive
             ? "text-blue-700 underline underline-offset-4 font-medium"
-            : "hover:underline underline-offset-4 text-gray-700 hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+            : "hover:underline underline-offset-4 text-gray-700 hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 transition-colors"
         }
         href={href}
       >

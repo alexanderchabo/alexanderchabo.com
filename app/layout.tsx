@@ -20,11 +20,11 @@ export default function RootLayout({
         <a href="#main" className="skip-link">
           Skip to content
         </a>
-        <div className="max-w-[46rem] mx-auto px-6 md:px-8 mb-10">
+        <div className="max-w-[50rem] mx-auto px-6 md:px-8 mb-12">
           <NavBar />
           <main
             id="main"
-            className="flex flex-col pt-6 md:pt-8 leading-relaxed text-[15px] md:text-[16px] text-[#111827]"
+            className="flex flex-col pt-6 md:pt-10 leading-relaxed text-[15px] md:text-[16px] text-[#111827]"
           >
             {children}
           </main>
