@@ -11,14 +11,14 @@ const NAV_LINKS = [
 export const NavBar = () => {
   return (
     <header>
-      <nav className="flex justify-between items-center py-4 border-b border-gray-400">
+      <nav className="flex justify-between items-center py-4 md:py-5 border-b border-gray-200">
         <Link
-          className="text-xl font-bold p-1 border-[3px] border-black flex justify-center items-center bg-white hover:bg-black hover:text-white cursor-pointer"
+          className="text-xl font-bold p-1 px-2 border-[3px] border-black flex justify-center items-center bg-white hover:bg-black hover:text-white cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
           href="/"
         >
           Ac
         </Link>
-        <ul className="flex">
+        <ul className="flex" role="menubar" aria-label="Primary">
           {NAV_LINKS.map(({ href, label, targetSegment }) => (
             <NavItem
               key={href}

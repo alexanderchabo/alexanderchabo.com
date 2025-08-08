@@ -14,10 +14,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-[#d6dbdc] text-black`}>
-        <div className="max-w-[40rem] mx-auto px-6 mb-8">
+      <body
+        className={`${inter.className} bg-[#f6f7f8] text-[#0f172a] antialiased`}
+      >
+        <a href="#main" className="skip-link">
+          Skip to content
+        </a>
+        <div className="max-w-[46rem] mx-auto px-6 md:px-8 mb-10">
           <NavBar />
-          <main className="flex flex-col pt-4">{children}</main>
+          <main
+            id="main"
+            className="flex flex-col pt-6 md:pt-8 leading-relaxed text-[15px] md:text-[16px] text-[#111827]"
+          >
+            {children}
+          </main>
         </div>
         <Suspense fallback={null}>
           <Analytics />

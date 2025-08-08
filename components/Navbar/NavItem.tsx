@@ -14,9 +14,15 @@ export const NavItem = ({ href, label, targetSegment }: NavItemProps) => {
   const isActive = activeSegment === targetSegment;
 
   return (
-    <li className="ml-4">
+    <li className="ml-4" role="none">
       <Link
-        className={isActive ? "text-blue-600 underline" : "hover:underline"}
+        role="menuitem"
+        aria-current={isActive ? "page" : undefined}
+        className={
+          isActive
+            ? "text-blue-700 underline underline-offset-4 font-medium"
+            : "hover:underline underline-offset-4 text-gray-700 hover:text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+        }
         href={href}
       >
         {label}
