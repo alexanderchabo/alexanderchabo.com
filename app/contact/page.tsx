@@ -1,3 +1,4 @@
+import { ContactList } from "@/components/Contact/ContactList";
 const SOCIALS = [
   {
     name: "Email",
@@ -40,31 +41,7 @@ const SOCIALS = [
   },
 ];
 
-const Socials = () => {
-  return (
-    <ul className="grid grid-cols-1 gap-4 p-0">
-      {SOCIALS.map(({ name, href, text, icon }) => (
-        <li key={name} className="list-none">
-          <a
-            href={href}
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label={name}
-            className="group flex items-center gap-4 rounded-md border border-gray-300 bg-gray-100 p-4 transition hover:bg-black/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-black"
-          >
-            <span className="flex h-10 w-10 items-center justify-center rounded-md border border-gray-400 bg-white text-gray-700 group-hover:bg-black group-hover:text-white">
-              {icon}
-            </span>
-            <span className="min-w-0">
-              <span className="block text-sm text-gray-600">{name}</span>
-              <span className="block break-words text-blue-600 underline">{text}</span>
-            </span>
-          </a>
-        </li>
-      ))}
-    </ul>
-  );
-};
+const Socials = () => <ContactList items={SOCIALS} />;
 
 export const metadata = {
   title: "Alexander Chabo - Contact | Senior Fullstack Growth Engineer",
