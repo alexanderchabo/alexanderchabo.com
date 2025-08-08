@@ -1,5 +1,3 @@
-import { Typography } from "@/components/Typography/Typography";
-
 export const metadata = {
   title:
     "Alexander Chabo - Personal Website | Senior Fullstack Growth Engineer",
@@ -12,22 +10,22 @@ export default function Home() {
 
   return (
     <>
-      <Typography tag="h1">Hey there! I&apos;m Alexander Chabo</Typography>
+      <h1 className="mb-4 text-2xl">Hey there! I&apos;m Alexander Chabo</h1>
 
-      <Typography>
+      <p className="mb-4">
         {`I'm a Senior FullStack Growth Engineer with +${yearsWorking} years of experience,
         aiming to be where groundbreaking tech meets culture, people, and the
         next big ideas.`}
-      </Typography>
+      </p>
 
-      <Typography>
+      <p className="mb-4">
         Throughout the last couple of years, I&apos;ve been working in the
         domain of growth engineering, where I&apos;ve been building and scaling
         products and teams through product-led experimentation. I&apos;ve also
         been driving how organizations work with progressive delivery and
         product analytics through thought leadership, coaching, and hands-on
         work.
-      </Typography>
+      </p>
     </>
   );
 }

@@ -1,5 +1,3 @@
-import { Typography } from "@/components/Typography/Typography";
-
 const SOCIALS = [
   {
     name: "Email",
@@ -22,17 +20,10 @@ const Socials = () => {
   return (
     <div>
       {SOCIALS.map(({ name, href, text }) => (
-        <div key={name} style={{ marginBottom: "1rem" }}>
-          <Typography noMargin>{name}</Typography>
+        <div key={name} className="mb-4">
+          <p className="m-0">{name}</p>
 
-          <a
-            style={{
-              color: "blue",
-              wordWrap: "break-word",
-            }}
-            href={href}
-            target="_blank"
-          >
+          <a className="text-blue-600 break-words" href={href} target="_blank">
             {text}
           </a>
         </div>
@@ -50,11 +41,11 @@ export const metadata = {
 export default function Contact() {
   return (
     <>
-      <Typography tag="h1">Contact</Typography>
-      <Typography>
+      <h1 className="mb-4 text-2xl">Contact</h1>
+      <p className="mb-4">
         Don&apos;t be a stranger! Feel free to reach out to me on any of the
         socials below.
-      </Typography>
+      </p>
       <Socials />
     </>
   );

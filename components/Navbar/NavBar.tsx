@@ -1,5 +1,4 @@
 import { NavItem } from "./NavItem";
-import styles from "./NavBar.module.css";
 import Link from "next/link";
 
 const NAV_LINKS = [
@@ -12,11 +11,14 @@ const NAV_LINKS = [
 export const NavBar = () => {
   return (
     <header>
-      <nav className={styles.nav}>
-        <Link className={styles.logo} href="/">
+      <nav className="flex justify-between items-center py-4 border-b border-gray-400">
+        <Link
+          className="text-xl font-bold p-1 border-[3px] border-black flex justify-center items-center bg-white hover:bg-black hover:text-white cursor-pointer"
+          href="/"
+        >
           Ac
         </Link>
-        <ul>
+        <ul className="flex">
           {NAV_LINKS.map(({ href, label, targetSegment }) => (
             <NavItem
               key={href}

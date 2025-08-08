@@ -1,7 +1,5 @@
-import styles from "./ResumeEntry.module.css";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, Document } from "@contentful/rich-text-types";
-import { Typography } from "@/components/Typography/Typography";
 
 export interface ResumeEntryProps {
   title: string;
@@ -38,22 +36,18 @@ export const ResumeEntry = ({
   const date = `${dateStartedString} to ${dateEndedString}`;
 
   return (
-    <div className={styles.entry}>
+    <div className="bg-gray-100 p-4">
       <div>
-        <Typography noMargin className={styles.title}>
-          {title}
-        </Typography>
-        <Typography>{subtitle}</Typography>
+        <p className="m-0 font-bold text-lg">{title}</p>
+        <p className="mb-4">{subtitle}</p>
 
-        <Typography noMargin className={styles.date}>
-          {date}
-        </Typography>
-        <Typography className={styles.location}>{location}</Typography>
+        <p className="m-0 text-sm italic text-gray-500">{date}</p>
+        <p className="text-sm text-gray-500">{location}</p>
 
         {documentToReactComponents(body, {
           renderNode: {
             [BLOCKS.PARAGRAPH]: (_node, children) => (
-              <Typography noMargin>{children}</Typography>
+              <p className="m-0">{children}</p>
             ),
           },
         })}

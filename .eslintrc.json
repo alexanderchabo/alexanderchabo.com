@@ -1,40 +1,6 @@
 {
   "extends": "next/core-web-vitals",
   "rules": {
-    "react/forbid-elements": [
-      "error",
-      {
-        "forbid": [
-          {
-            "element": "p",
-            "message": "Use Typography component instead"
-          },
-          {
-            "element": "h1",
-            "message": "Use Typography component instead"
-          },
-          {
-            "element": "h2",
-            "message": "Use Typography component instead"
-          },
-          {
-            "element": "h3",
-            "message": "Use Typography component instead"
-          },
-          {
-            "element": "h4",
-            "message": "Use Typography component instead"
-          },
-          {
-            "element": "h5",
-            "message": "Use Typography component instead"
-          },
-          {
-            "element": "h6",
-            "message": "Use Typography component instead"
-          }
-        ]
-      }
-    ]
+    "react/forbid-elements": "off"
   }
 }

@@ -9,21 +9,11 @@ interface ResumeEntriesProps {
 
 export const ResumeEntries = ({ entries }: ResumeEntriesProps) => {
   return (
-    <ul
-      style={{
-        padding: 0,
-      }}
-    >
+    <ul className="p-0">
       {entries.map(
         ({ title, subtitle, dateStarted, dateEnded, location, body }) => {
           return (
-            <li
-              key={title}
-              style={{
-                listStyleType: "none",
-                marginBottom: "1rem",
-              }}
-            >
+            <li key={title} className="list-none mb-4">
               <ResumeEntry
                 title={title}
                 subtitle={subtitle}

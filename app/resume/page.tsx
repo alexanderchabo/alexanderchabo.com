@@ -5,7 +5,6 @@ import {
   getAllWorkEntries,
 } from "@/lib/contentful/api";
 import { ResumeEntries } from "@/components/ResumeEntries/ResumeEntries";
-import { Typography } from "@/components/Typography/Typography";
 
 export const metadata = {
   title: "Alexander Chabo - Resume | Senior Fullstack Growth Engineer",
@@ -39,12 +38,12 @@ export default async function Resume() {
 
   return (
     <>
-      <Typography tag="h1">Resume</Typography>
-      <Typography>The MacGyver is strong in this one.</Typography>
+      <h1 className="mb-4 text-2xl">Resume</h1>
+      <p className="mb-4">The MacGyver is strong in this one.</p>
       <ResumeEntries entries={mappedWorkEntries} />
 
-      <Typography tag="h2">Education</Typography>
-      <Typography>The math is (was?) strong in this one.</Typography>
+      <h2 className="mb-4 text-xl">Education</h2>
+      <p className="mb-4">The math is (was?) strong in this one.</p>
       <ResumeEntries entries={mappedEducationEntries} />
     </>
   );

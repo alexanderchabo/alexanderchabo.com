@@ -1,10 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import classNames from "classnames";
-import styles from "./NavItem.module.css";
 import { useSelectedLayoutSegment } from "next/navigation";
-import { Typography } from "../Typography/Typography";
 
 interface NavItemProps {
   href: string;
@@ -17,14 +14,12 @@ export const NavItem = ({ href, label, targetSegment }: NavItemProps) => {
   const isActive = activeSegment === targetSegment;
 
   return (
-    <li>
+    <li className="list-none ml-4">
       <Link
-        className={classNames(styles.link, {
-          [styles.active]: isActive,
-        })}
+        className={isActive ? "text-blue-600 underline" : ""}
         href={href}
       >
-        <Typography noMargin>{label}</Typography>
+        {label}
       </Link>
     </li>
   );
