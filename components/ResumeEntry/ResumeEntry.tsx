@@ -36,7 +36,7 @@ export const ResumeEntry = ({
   const date = `${dateStartedString} to ${dateEndedString}`;
 
   return (
-    <div className="bg-gray-100 p-4">
+    <div className="bg-gray-100 p-4 border-b border-gray-300">
       <div>
         <p className="m-0 font-bold text-lg">{title}</p>
         <p className="mb-4">{subtitle}</p>

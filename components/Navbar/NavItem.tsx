@@ -16,7 +16,7 @@ export const NavItem = ({ href, label, targetSegment }: NavItemProps) => {
   return (
     <li className="list-none ml-4">
       <Link
-        className={isActive ? "text-blue-600 underline" : ""}
+        className={isActive ? "text-blue-600 underline" : "hover:underline"}
         href={href}
       >
         {label}

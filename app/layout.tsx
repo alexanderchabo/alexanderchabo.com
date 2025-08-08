@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-gray-200 text-black`}>
+      <body className={`${inter.className} bg-[#d6dbdc] text-black`}>
         <div className="max-w-[40rem] mx-auto px-6 mb-8">
           <NavBar />
           <main className="flex flex-col pt-4">{children}</main>
