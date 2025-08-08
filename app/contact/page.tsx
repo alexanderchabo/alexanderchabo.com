@@ -52,9 +52,9 @@ export const metadata = {
 export default function Contact() {
   return (
     <>
-      <h1 className="mb-2 text-2xl">Contact</h1>
+      <h1 className="mb-2 text-3xl">Contact</h1>
       <p className="mb-6 text-gray-700">
-        Don&apos;t be a stranger! Reach me on any of the platforms below.
+        Don&apos;t be a stranger! Connect with me on any of the platforms below.
       </p>
       <Socials />
     </>

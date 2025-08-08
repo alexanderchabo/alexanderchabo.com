@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <>
-      <h1 className="mb-4 text-2xl">Hey there! I&apos;m Alexander Chabo</h1>
+      <h1 className="mb-6 text-3xl">Hey there! I&apos;m Alexander Chabo</h1>
 
       <p className="mb-4">
         {`I'm a Senior FullStack Growth Engineer with +${yearsWorking} years of experience,

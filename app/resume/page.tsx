@@ -38,12 +38,12 @@ export default async function Resume() {
 
   return (
     <>
-      <h1 className="mb-4 text-2xl">Resume</h1>
-      <p className="mb-4">The MacGyver is strong in this one.</p>
+      <h1 className="mb-2 text-3xl">Resume</h1>
+      <p className="mb-6">The MacGyver is strong in this one.</p>
       <ResumeEntries entries={mappedWorkEntries} />
 
-      <h2 className="mb-4 text-xl">Education</h2>
-      <p className="mb-4">The math is (was?) strong in this one.</p>
+      <h2 className="my-8 mb-2 text-3xl">Education</h2>
+      <p className="mb-6">The math is (was?) strong in this one.</p>
       <ResumeEntries entries={mappedEducationEntries} />
     </>
   );

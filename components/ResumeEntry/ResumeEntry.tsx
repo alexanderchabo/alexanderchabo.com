@@ -42,7 +42,7 @@ export const ResumeEntry = ({
         <p className="mb-4">{subtitle}</p>
 
         <p className="m-0 text-sm italic text-gray-500">{date}</p>
-        <p className="text-sm text-gray-500">{location}</p>
+        <p className="text-sm text-gray-500 pb-3">{location}</p>
 
         {documentToReactComponents(body, {
           renderNode: {
